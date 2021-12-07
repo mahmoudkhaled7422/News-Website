@@ -1,0 +1,23 @@
+﻿@model List<ContactUs>
+<section id="testimonials" class="testimonials">
+                <div class="container">
+
+                    <div class="section-title">
+                        <h2>الأراء</h2></div>
+
+                    <div class="row p-0 m-0">
+                        @foreach (var message in Model)
+                        {
+                            <div class="col-10 mb-2 offset-1"  style="direction:rtl;">
+                                <div class="testimonial-item">
+                                    <h3 class="text-capitalize">@message.Name</h3>
+                                    <h4>@message.Email</h4>
+                                    <h5 class="text-danger">@message.Subject</h5>
+                                    <p style="word-wrap:break-word;">@message.Message</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </section><!-- End Testimonials Section -->

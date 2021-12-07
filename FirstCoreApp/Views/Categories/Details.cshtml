@@ -1,0 +1,26 @@
+﻿@model FirstCoreApp.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_Layout";
+}
+    <div style="direction:rtl;">
+        <dl class="row">
+            <dt class = "col-sm-2">
+                نوع الأخبار
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt class = "col-sm-2">
+                تفاصيل
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+        </dl>
+        <div>
+            <a title="تعديل" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+        </div>
+    </div>
+    <a title="السابق" asp-action="Index" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i></a>

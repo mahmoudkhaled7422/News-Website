@@ -1,0 +1,69 @@
+﻿@model FirstCoreApp.Models.NewsViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_Layout";
+}
+<div class="col-md-10 mx-auto py-4 font-16" style="direction:rtl;">
+    <div class="card">
+        <div class="card-header bg-dark text-white text-uppercase">
+            <h2>تعديل الخبر</h2>
+        </div>
+        <div class="card-body text-dark" style="background-color:white">
+            <form enctype="multipart/form-data" asp-action="edit">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Title" class="control-label">عنوان الخبر</label>
+                            <input asp-for="Title" class="form-control form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Date" class="control-label">تاريخ الخبر</label>
+                            <input asp-for="Date" class="form-control" />
+                            <span asp-validation-for="Date" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="CategoryId" class="control-label">نوع الخبر</label>
+                            <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Image" class="control-label">صورة الخبر</label>
+                            <input asp-for="Image" type="file" accept=".jpg,.gif,.png" class="form-control" />
+                            <span asp-validation-for="Image" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Topic" class="control-label">تفاصيل الخبر</label>
+                            <textarea asp-for="Topic" class="form-control">
+                            </textarea>
+                            <span asp-validation-for="Topic" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <input type="submit" value="إضافة" class="btn btn-success text-uppercase mt-4" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<a asp-action="Index" class="btn btn-sm btn-primary text-uppercase"><i class="fa fa-arrow-circle-left"></i></a>

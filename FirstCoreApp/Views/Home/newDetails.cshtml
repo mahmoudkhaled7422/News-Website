@@ -1,0 +1,41 @@
+﻿@model News
+@{
+    ViewData["Title"] = "newDetails";
+}
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row" >
+                    <div class="col-lg-8 entries offset-lg-2"  style="direction:rtl;">
+
+                        <article class="entry">
+
+                            <div class="card-img">
+                                <img src="~/assets/img/blog/@Model.Image" alt="" class="img-fluid rounded" width="100%">
+                            </div>
+                        <hr/>
+                            <h2 class="entry-title">
+                                @Model.Title
+                            </h2>
+
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2020-01-01">@Model.Date</time></li>
+                                </ul>
+                            </div>
+
+                            <div class="entry-content">
+                                <h4 class="text-danger">تفاصيل الخبر</h4>
+                                <p>
+                                    @Model.Topic
+                                </p>
+                            </div>
+
+                        </article><!-- End blog entry -->
+                    </div><!-- End blog entries list -->
+
+            </div>
+
+        </div>
+    </section><!-- End Blog Section -->

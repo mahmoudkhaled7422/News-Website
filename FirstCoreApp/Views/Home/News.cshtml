@@ -1,0 +1,61 @@
+﻿@model List<News>
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-danger text-center" style="direction:rtl;">
+        <h3>
+            للأسف غير متاح أي أخبار
+        </h3>
+    </div>
+}
+else
+{
+
+<!-- ======= Blog Section ======= -->
+<div class="alert alert-dark text-center" style="direction:rtl;">
+    <h3>
+        أخر أخبار @ViewData["cat"]
+    </h3>
+</div>
+<section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-lg-8 entries offset-lg-2" style="direction:rtl;">
+
+                    <article class="entry">
+
+                        <div class="card-img">
+                            <img src="~/assets/img/blog/@item.Image" alt="" class="img-fluid" width="100%">
+                        </div>
+                        <hr />
+                        <h2 class="entry-title">
+                            <a href="/Home/newDetails/@item.Id">@item.Title</a>
+                        </h2>
+
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2020-01-01">@item.Date</time></li>
+                            </ul>
+                        </div>
+
+                        <div class="entry-content">
+                            @*<p>
+                                    @item.Topic
+                                </p>*@
+                            <div class="read-more">
+                                <a href="/Home/newDetails/@item.Id">المزيد</a>
+                            </div>
+                        </div>
+
+                    </article><!-- End blog entry -->
+                </div><!-- End blog entries list -->
+
+            }
+        </div>
+
+    </div>
+</section><!-- End Blog Section -->
+}
